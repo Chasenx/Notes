@@ -89,11 +89,11 @@
     显示更加详细的信息加参数 -v
 
     从本地推送分支，使用 git push origin branch-name
-    若推送失败，用git pull抓取远程的新提交（已经关联了，但是别人提交了一个新版本）
+    若推送失败，用 git pull 抓取远程的新提交（已经关联了，但是别人提交了一个新版本）
 
     在本地创建和远程分支对应的分支，使用 git checkout -b branch-name origin/branch-name
 
-    建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
+    建立本地分支和远程分支的关联，使用 git branch --set-upstream branch-name origin/branch-name；
 
 ## 14.标签管理
 
