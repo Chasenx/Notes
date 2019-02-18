@@ -71,6 +71,8 @@ classmates = ['Michael', 'Bob', 'Tracy']
 ['Michael', 'Bob', 'Tracy']
 ```
 
+也可以直接像Matlab的矩阵一样，使用+进行相加
+
 ## 4. tuple类的创建和使用（不可变有序元组）
 
 使用圆括号进行创建
