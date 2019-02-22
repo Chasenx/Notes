@@ -5,3 +5,6 @@
 ### 4. Python笔记二（函数）
 ### 5. Python笔记三 （高级特性）
 ### 6. Python笔记四 （`map()`、`reduce()`、`filter()`、`sorted()`、闭包、装饰器、偏函数）
+### 7. Python笔记五 （面向对象编程）
+### 8. Python笔记六 （错误处理、调试）
+### 9. Python笔记七 （IO编程）
