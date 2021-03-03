@@ -6,7 +6,7 @@ string (字符串对象)
 构造函数：
 -------
 - `string()`: 初始化空字符串
-- `string("str_data")`: 使用char* 字符串初始化
+- `string("str_data")`: 使用char* 字符串初始化 🍖
 - `string( size_type length, char ch )`: 使用 n 个字符来初始化
 - `string( string &str, size_type index, size_type length )`: 用另一个字符串中间几个来初始化
 - `string(const string& str)`: 拷贝构造函数
@@ -18,6 +18,11 @@ string (字符串对象)
 - `length()`: 长度
 - `size()`: 长度
 - `resize()`: 重置字符个数
+
+输入函数：
+-------
+- 使用 `cin` 
+- 使用 `getline(cin, string)`
 
 输出函数：
 -------
@@ -83,8 +88,22 @@ vector (动态数组)
     - `clear()`: 删除所有
     - `swap(vector &from)`: 交换两个容器
 
+随机数生成：
+=========
+- `#include <stdlib.h>`
+- `#include <time.h> `
+- 初始化随机数种子，放在开头 `srand((unsigned)time(NULL));`
+- `rand()` 生成 `0 ~ RAND_MAX` 之间任意的随机数
 
-
+map(哈希字典)：
+============
+- 定义 `map<int, string> dict`
+- 大小 `dict.size()`
+- 直接使用 `[]` 来访问和修改字典值 `dict[3] = "hello"`
+- 查找是否存在:
+  - `map<int, string>::iterator iter`
+  - `iter = dict.find(3)`
+  - 不存在时，`iter == dict.end()` 根据这个来判断是否存在
 
 
 
