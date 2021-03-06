@@ -26,9 +26,10 @@ string (字符串对象)
 
 输出函数：
 -------
-- `cout` 直接输出
+- `cout`: 直接输出
 - `c_str()`: 输出普通字符串
-- `at()` 以及 [] 下标访问: 输出单个字符，注意不能越界
+- `at()`: 以及 [] 下标访问: 输出单个字符，注意不能越界
+- `back()`: 输出最后一个元素
 
 修改函数：
 -------
@@ -104,6 +105,19 @@ map(哈希字典)：
   - `map<int, string>::iterator iter`
   - `iter = dict.find(3)`
   - 不存在时，`iter == dict.end()` 根据这个来判断是否存在
+- 遍历
+```c++
+    for (auto iter = dict.begin(); iter != dict.end(); iter++) {
+        cout << iter->first << ": " << iter->second << endl;
+    }
+```
+
+stack(栈)：
+=========
+- 定义 `stack<int> s`
+- 返回栈顶元素 `s.top()`
+- 出栈 `i = s.pop()`
+- 入栈 `s.push(i)`
 
 
 
