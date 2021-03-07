@@ -96,8 +96,8 @@ vector (动态数组)
 - 初始化随机数种子，放在开头 `srand((unsigned)time(NULL));`
 - `rand()` 生成 `0 ~ RAND_MAX` 之间任意的随机数
 
-map(哈希字典)：
-============
+map(底层红黑树)、unorderd_map(底层哈希表)：
+=====================================
 - 定义 `map<int, string> dict`
 - 大小 `dict.size()`
 - 直接使用 `[]` 来访问和修改字典值 `dict[3] = "hello"`
@@ -119,6 +119,12 @@ stack(栈)：
 - 出栈 `i = s.pop()`
 - 入栈 `s.push(i)`
 
-
+queue(队列)：
+==========
+- 定义 `queue<int> q`
+- 返回队前元素 `q.from()`
+- 返回队尾元素 `q.back()`
+- 入队 `q.push(i)`
+- 删除队首元素 `q.pop()`
 
 

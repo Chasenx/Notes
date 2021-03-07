@@ -67,6 +67,7 @@ vector<int> nextGreaterElements(vector<int>& nums) {
 ```
 
 链表归并排序：
+-----------
 - 使用merge函数合并两个有序链表
 - 使用cut函数将链表切成两段，并返回后面一段的指针
 ```c++
