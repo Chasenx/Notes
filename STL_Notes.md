@@ -66,6 +66,13 @@ vector (动态数组)
 - `vector(size_type num, const TYPE &val )`: 用 num 个 val 来初始化容器
 - `vector(const vector &from)`: 拷贝构造
 - `vector(input_iterator start, input_iterator end)`: 迭代器初始化
+```c++
+// 利用迭代器生成子数组
+vector<int> v = {1, 2, 3, 4, 5};
+vector<int> sub(v.begin() + 1, v.begin() + 3);
+//实际生成的子数组是 {2, 3}
+//后面的迭代器是子数组末尾的下一个
+```
 
 属性函数：
 -------
@@ -122,7 +129,7 @@ stack(栈)：
 queue(队列)：
 ==========
 - 定义 `queue<int> q`
-- 返回队前元素 `q.from()`
+- 返回队前元素 `q.front()`
 - 返回队尾元素 `q.back()`
 - 入队 `q.push(i)`
 - 删除队首元素 `q.pop()`

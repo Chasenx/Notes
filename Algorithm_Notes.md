@@ -131,3 +131,72 @@ ListNode* merge(ListNode* l1, ListNode* l2) {
     return dummy_head->next;
 }
 ```
+
+将x减到0的最小操作数：
+-----------------
+- [1, 1, 4, 2, 3] 每次从数组的左边或者右边删除一个元素，使删除元素之和为x，求出最少的元素个数
+- 问题转化为求数组的一个子数组，使得改子数组之和为 sum - x，求该最大子数组
+- 利用移动窗口法，用两个指针 left和right 来定位子串
+```c++
+int minOperations(vector<int>& nums, int x) {
+    // 问题转换为求数值为 sum - x 的最大子串
+    int length = nums.size();
+    int sum = 0;
+    for (auto n : nums) {
+        sum += n;
+    }
+    int target = sum - x;
+    if (target < 0) {
+        return -1;
+    }
+    int left = 0; 
+    int right = 0;
+    int max_step = -1; // 记录最小的步数
+    while (right < length) {
+        target -= nums[right++];
+        while (target < 0) {
+            target +=nums[left++];
+        }
+        if (target == 0) {
+            max_step = max(max_step, right - left);
+        }
+    }
+    return max_step == -1 ? -1 : length - max_step;
+}
+```
+
+利用BFS对树进行层次遍历：
+--------------------
+- 树的层次遍历需要使用到一个队列 queue
+- 当层次遍历需要记录每一层的元素个数的时候，在每一层开始前先记录下这一层的节点数量
+```c++
+vector<vector<int>> levelOrder(TreeNode* root) {
+    vector<vector<int>> res;
+    if (root == nullptr) {
+        return res;
+    }
+    queue<TreeNode*> q;
+    q.push(root);
+    int level = 0;  // level 用来记录所在层数
+
+    while (!q.empty()) {
+        int n = q.size();
+        vector<int> temp;
+        res.push_back(temp);
+
+        for (int i = 0; i < n; i++) {
+            TreeNode* p = q.front();
+            q.pop();
+            res[level].push_back(p->val);
+            if (p->left != nullptr) {
+                q.push(p->left);
+            }
+            if (p->right != nullptr) {
+                q.push(p->right);
+            }
+        }
+        level++;
+    }
+    return res;
+}
+```
