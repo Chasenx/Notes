@@ -41,3 +41,50 @@ C语言复习笔记
 - `strcpy(char *dest, char *src)`: 字符串复制
 - `strcat(char *dest, char *src)`: 字符串拼接
 - `strcmp(char *dest, char *src)`: 字符串比较
+
+
+c++部分
+======
+
+继承和多态：
+--------
+- 多态实现的条件有三个
+  - 有继承关系
+  - 有 `override` 重写
+  - 基类指针指向子类对象
+- 实现时候的注意点
+  - `override` 关键字是加在子类函数后面的
+  - 记得加 `public` 修饰类中变量
+  - 类、结构体、共用体定义的时候最后要加括号
+  - 继承的时候也有 `public` 修饰
+
+```c++
+class Animal {
+public:
+    virtual void eat() {
+        cout << "Animal eat" << endl;
+    }
+};
+
+class Dog : public Animal{
+public:
+    void eat() override {
+        cout << "Dog eat" << endl;
+    }
+};
+
+class Cat : public Animal{
+public:
+    void eat() override {
+        cout << "Cat eat" << endl;
+    }
+};
+
+// 调用过程
+Animal* a = new Dog();
+a->eat();    // 输出 Dog eat
+a = new Cat();
+a->eat();   // 输出 Cat eat
+```
+
+
